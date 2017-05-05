@@ -1,0 +1,228 @@
+.hanger-area {
+  border-radius: 1vmin;
+  border: 2px dotted #ccc;
+  display: table-cell;
+  position: relative;
+  width: 55vmin;
+}
+
+@keyframes hang-em-up {
+  0%   {top: 10%}
+  50%  {top: 30%}
+  100% {top: 10%}
+}
+
+.hanger.hung {
+  animation: hang-em-up linear 1s;
+  
+  .rope {
+    opacity: 1;
+  }
+}
+
+.hanger {
+  top: 10%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.lower-beam {
+  width: 90%;
+  border-radius: 25%;
+  border: 0.6vmin solid #333;
+  position: absolute;
+  bottom: 1.3vmin;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.vertical-beam {
+  top: 0;
+  border: 0.5vmin solid #333;
+  position: absolute;
+  left: 10vmin;
+  bottom: 1.3vmin;
+}
+
+.upper-beam {
+  width: 35vmin;
+  border: 0.4vmin solid #333;
+  position: absolute;
+  left: 5vmin;
+  top: 0;
+  border-radius: 25% 35%;
+}
+
+.rope {
+  opacity: 0;
+  position: absolute;
+  left: 51.8%;
+  top: 0%;
+  height: 10vmin;
+  width: 0.5vmin;
+  background-color: #440505;
+  transition: 0.5s opacity linear 0s;
+}
+
+.person.hung {
+  bottom: 7vmin;
+  
+  .arm {
+    transform: rotate(75deg);
+  }
+  
+  .arm.right {
+    transform: rotate(105deg);
+  }
+  
+  .leg {
+    transform: rotate(80deg);
+  }
+  
+  .leg.right {
+    transform: rotate(100deg);
+  }
+}
+
+.person {
+  position: absolute;
+  width: 13vmin;
+  height: 35vmin;
+  bottom: -4.7vmin;
+  left: 25vmin;
+  transition: 0.5s bottom linear 0.5s;
+  
+  .head.missed {
+    border-color: #ccc;
+    .eye, .mouth {
+      background-color: #ccc;
+    }
+  }
+  
+  .head {
+    position: absolute;
+    top: 0%;
+    left: -7%;
+    border: 0.7vmin solid #444;
+    height: 22%;
+    width: 60%;
+    border-radius: 100%;
+    
+    .eye {
+      position: absolute;
+      top: 27%;
+      left: 25%;
+      height: 16%;
+      width: 12%;
+      background-color: #444;
+      border-radius: 100%;
+      z-index: 1;
+    }
+    
+    .eye:first-of-type {
+      left: auto;
+      right: 25%;
+    }
+    
+    .mouth {
+      position: absolute;
+      left: 50%;
+      top: 62%;
+      transform: translateX(-50%);
+      height: 30%;
+      width: 45%;
+      background-color: #444;
+      border-radius: 100%;
+      
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 60%;
+        background-color: #fff;
+        left: 0;
+        top: 50%;
+        border-radius: 0 0 25% 25%;
+      }
+      
+      &:before {
+        content: "";
+        position: absolute;
+        width: 70%;
+        height: 70%;
+        background-color: #fff;
+        border-radius: 100%;
+        left: 50%;
+        top: 60%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 1;
+      }
+    }
+    
+    .mouth.smile {
+      top: 55%;
+      
+      &:after {
+        top: -10%;
+        border-radius: 25% 25% 0 0;
+      }
+      
+      &:before {
+        top: 40%;
+      }
+    }
+  }
+  
+  .arm.missed, .body.missed, .leg.missed {
+    background-color: #ccc;
+  }
+  
+  .arm {
+    position: absolute;
+    width: 60%;
+    height: 2%;
+    background-color: #444;
+    border-radius: 1vmin;
+    transform-origin: top left;
+    transform: rotate(55deg);
+    top: 25%;
+    left: 30%;
+    transition: 0.5s transform linear 0.5s;
+  }
+  
+  .arm.right {
+    transform: rotate(125deg);
+  }
+  
+  .body {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    width: 90%;
+    height: 2%;
+    background-color: #444;
+    border-radius: 1vmin;
+    transform-origin: top left;
+    transform: rotate(90deg);
+  }
+  
+  .leg {
+    position: absolute;
+    width: 70%;
+    height: 2%;
+    background-color: #444;
+    border-radius: 1vmin;
+    transform-origin: top left;
+    transform: rotate(65deg);
+    top: 57%;
+    left: 30%;
+    transition: 0.5s transform linear 0.5s;
+  }
+  
+  .leg.right {
+    transform: rotate(110deg);
+  }
+}

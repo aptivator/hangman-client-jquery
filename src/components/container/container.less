@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon');
+
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+  background-color: #fff;
+}
+
+.container {
+  font-family: cursive;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.container.screen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+@keyframes fade-in-out {
+  0%   {opacity: 0.4;}
+  50%  {opacity: 1;}
+  100% {opacity: 0.4;}
+}
+
+.loading {
+  margin: 1.5vmin 0;
+  font-size: 4vmin;
+  color: #777;
+  text-align: center;
+  animation: fade-in-out linear 2.5s infinite;
+}
+
+.hidden {
+  display: none !important;
+}
+
+h1 {
+  font: bold 8vmin/2 cursive;
+  text-transform: capitalize;
+  letter-spacing: 0.5vmin;
+  text-align: center;
+  color: #444;
+  font-variant: small-caps;
+}
+
+.play-area {
+  display: table;
+  margin: 0 auto;
+  white-space: nowrap;
+  width: 80vmin;
+}
+
+footer {
+  position: relative;
+  bottom: -5vmin;
+  color: #777;
+  text-align: center;
+  font-size: 1.5vmin;
+}
+
+.copy {
+  font-family: 'Coming Soon';
+  font-size: 1.2em;
+}
+
+.spacer {
+  display: table-cell;
+  width: 2vmin;
+}
+
+
+

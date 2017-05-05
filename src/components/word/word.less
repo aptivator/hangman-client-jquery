@@ -1,0 +1,40 @@
+.word {
+  display: table;
+  margin: 2vmin auto;
+  padding: 3vmin 3vmin 2vmin;
+  border: 2px dotted #ccc;
+  border-radius: 1vmin;
+  white-space: nowrap;
+  
+  .letter {
+    display: inline-block;
+    height: 5vmin;
+    width: 6vmin;
+    position: relative;
+    
+    span {
+      position: absolute;
+      top: -0.5vmin;
+      left: 0vmin;
+      width: 100%;
+      height: 100%;
+      font: normal 7.5vmin/1 'Coming Soon', sans-serif;
+      color: #666;
+      text-transform: uppercase;
+      text-align: center;
+      
+      &:empty::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: -1vmin;
+        border: 1px solid #999;
+      }
+    }
+    
+    & + .letter {
+      margin-left: 3vmin;
+    }
+  }
+}

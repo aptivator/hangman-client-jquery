@@ -1,0 +1,87 @@
+.controls {
+  padding: 1vmin;
+  margin-top: 2vmin;
+  border: 2px dotted #ddd;
+  border-radius: 1vmin;
+  display: table-cell;
+}
+
+.letters-container {
+  width: 20vmin;
+}
+
+.letters.screen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.letters {
+  position: relative;
+  display: inline-block;
+  
+  > .letter-control {
+    float: left;
+    width: 5vmin;
+    height: 6vmin;
+    line-height: 6vmin;
+    text-align: center;
+    font-size: 3vmin;
+    text-transform: uppercase;
+    color: #444;
+    cursor: pointer;
+    
+    &:hover {
+      border-radius: 1vmin;
+      background-color: #eee;
+    }
+    
+    &.picked {
+      color: #ddd;
+      pointer-events:none;
+    }
+    
+    &:nth-of-type(4n + 1) {
+      clear: left;
+    }
+  }
+}
+
+.label {
+  text-align: center;
+  font-size: 1.8vmin;
+  color: #777;
+  margin-bottom: 0.5vmin;
+}
+
+button {
+  display: block;
+  outline: 0;
+  width: 100%;
+  padding: 1.5vmin;
+  font: bold 2vmin/1 'Open Sans', sans-serif;
+  letter-spacing: 0.1vmin;
+  border: 1px solid #ccc;
+  border-radius: 0.5vmin;
+  text-transform: uppercase;
+  background-color: #eee;
+  cursor: pointer;
+  color: #333;
+  margin-top: 2vmin;
+  
+  &:hover {
+    background-color: #ccc;
+    border-color: #aaa;
+    color: #111;
+  }
+  
+  &:active {
+    background-color: #aaa;
+    color: #000;
+  }
+}
