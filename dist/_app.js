@@ -27985,39 +27985,48 @@ var _class = function () {
     _classCallCheck(this, _class);
 
     var $el = (0, _jquery2.default)(_hanger2.default);
-    var $mouth = $el.find('.mouth');
+    var $head = $el.find('.head');
     var $person = $el.find('.person');
     var $hanger = $el.find('.hanger');
     (0, _jquery2.default)(_vars.hangerSelector).append($el);
-    _lodash2.default.extend(this, { $el: $el, $mouth: $mouth, $person: $person, $hanger: $hanger });
+    _lodash2.default.extend(this, { $el: $el, $head: $head, $person: $person, $hanger: $hanger });
   }
 
   _createClass(_class, [{
     key: 'linker',
     value: function linker(data) {
       var $el = this.$el,
-          $mouth = this.$mouth,
+          $head = this.$head,
           $person = this.$person,
           $hanger = this.$hanger;
       var missed = data.missed,
           correct = data.correct,
-          won = data.won;
+          won = data.won,
+          used = data.used;
 
 
-      if (!missed) {
-        $mouth.removeClass('smile');
+      if (!used.length) {
+        $head.removeClass('smile frown').addClass('neutral');
         $person.removeClass('hung');
         $hanger.removeClass('hung');
         return $el.find('.missed').removeClass('missed');
+      } else {
+        $head.removeClass('neutral');
       }
 
       $el.find('.part-' + missed).addClass('missed');
 
-      $mouth[(correct ? 'add' : 'remove') + 'Class']('smile');
+      if (correct) {
+        $head.addClass('smile').removeClass('frown');
+      } else {
+        $head.addClass('frown').removeClass('smile');
+      }
 
       if (won === false) {
         $person.addClass('hung');
         $hanger.addClass('hung');
+      } else if (won) {
+        $person.find('.missed').removeClass('missed');
       }
     }
   }]);
@@ -28479,7 +28488,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Ope
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Coming+Soon);", ""]);
 
 // module
-exports.push([module.i, "* {\n  border: 0;\n  padding: 0;\n  margin: 0;\n}\nbody {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  background-color: #fff;\n}\n.container {\n  font-family: cursive;\n  position: fixed;\n  top: 45%;\n  left: 50%;\n  transform: translateX(-50%) translateY(-50%);\n}\n.container.screen::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 1;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0);\n}\n@keyframes fade-in-out {\n  0% {\n    opacity: 0.4;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.4;\n  }\n}\n.loading {\n  margin: 1.5vmin 0;\n  font-size: 4vmin;\n  color: #777;\n  text-align: center;\n  animation: fade-in-out linear 2.5s infinite;\n}\n.hidden {\n  display: none !important;\n}\nh1 {\n  font: bold 8vmin/2 cursive;\n  text-transform: capitalize;\n  letter-spacing: 0.5vmin;\n  text-align: center;\n  color: #444;\n  font-variant: small-caps;\n}\n.play-area {\n  display: table;\n  margin: 0 auto;\n  white-space: nowrap;\n  width: 80vmin;\n}\nfooter {\n  position: relative;\n  bottom: -5vmin;\n  color: #777;\n  text-align: center;\n  font-size: 1.5vmin;\n}\n.copy {\n  font-family: 'Coming Soon';\n  font-size: 1.2em;\n}\n.spacer {\n  display: table-cell;\n  width: 2vmin;\n}\n", ""]);
+exports.push([module.i, "* {\n  border: 0;\n  padding: 0;\n  margin: 0;\n}\nbody {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  background-color: #fff;\n}\n.container {\n  font-family: cursive;\n  position: fixed;\n  top: 45%;\n  left: 50%;\n  transform: translateX(-50%) translateY(-50%);\n}\n.container.screen::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 1;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0);\n}\n@keyframes fade-in-out {\n  0% {\n    opacity: 0.4;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.4;\n  }\n}\n.loading {\n  position: relative;\n  margin: 1.5vmin 0;\n  transition: padding linear 0.3s;\n  padding: 2.2vmin 0;\n  overflow: hidden;\n}\n.loading span {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n  font-size: 3vmin;\n  color: #777;\n  text-align: center;\n  animation: fade-in-out linear 2s infinite;\n}\n.hidden {\n  padding: 0;\n}\nh1 {\n  font: bold 8vmin/2 cursive;\n  text-transform: capitalize;\n  letter-spacing: 0.5vmin;\n  text-align: center;\n  color: #444;\n  font-variant: small-caps;\n}\n.play-area {\n  display: table;\n  margin: 0 auto;\n  white-space: nowrap;\n  width: 80vmin;\n}\nfooter {\n  position: relative;\n  bottom: -5vmin;\n  color: #777;\n  text-align: center;\n  font-size: 1.5vmin;\n}\n.copy {\n  font-family: 'Coming Soon';\n  font-size: 1.2em;\n}\n.spacer {\n  display: table-cell;\n  width: 2vmin;\n}\n", ""]);
 
 // exports
 
@@ -28493,7 +28502,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, ".hanger-area {\n  border-radius: 1vmin;\n  border: 2px dotted #ccc;\n  display: table-cell;\n  position: relative;\n  width: 55vmin;\n}\n@keyframes hang-em-up {\n  0% {\n    top: 10%;\n  }\n  50% {\n    top: 30%;\n  }\n  100% {\n    top: 10%;\n  }\n}\n.hanger.hung {\n  animation: hang-em-up linear 1s;\n}\n.hanger.hung .rope {\n  opacity: 1;\n}\n.hanger {\n  top: 10%;\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  right: 0;\n}\n.lower-beam {\n  width: 90%;\n  border-radius: 25%;\n  border: 0.6vmin solid #333;\n  position: absolute;\n  bottom: 1.3vmin;\n  left: 0;\n  right: 0;\n  margin: 0 auto;\n}\n.vertical-beam {\n  top: 0;\n  border: 0.5vmin solid #333;\n  position: absolute;\n  left: 10vmin;\n  bottom: 1.3vmin;\n}\n.upper-beam {\n  width: 35vmin;\n  border: 0.4vmin solid #333;\n  position: absolute;\n  left: 5vmin;\n  top: 0;\n  border-radius: 25% 35%;\n}\n.rope {\n  opacity: 0;\n  position: absolute;\n  left: 51.8%;\n  top: 0%;\n  height: 10vmin;\n  width: 0.5vmin;\n  background-color: #440505;\n  transition: 0.5s opacity linear 0s;\n}\n.person.hung {\n  bottom: 7vmin;\n}\n.person.hung .arm {\n  transform: rotate(75deg);\n}\n.person.hung .arm.right {\n  transform: rotate(105deg);\n}\n.person.hung .leg {\n  transform: rotate(80deg);\n}\n.person.hung .leg.right {\n  transform: rotate(100deg);\n}\n.person {\n  position: absolute;\n  width: 13vmin;\n  height: 35vmin;\n  bottom: -4.7vmin;\n  left: 25vmin;\n  transition: 0.5s bottom linear 0.5s;\n}\n.person .head.missed {\n  border-color: #ccc;\n}\n.person .head.missed .eye,\n.person .head.missed .mouth {\n  background-color: #ccc;\n}\n.person .head {\n  position: absolute;\n  top: 0%;\n  left: -7%;\n  border: 0.7vmin solid #444;\n  height: 22%;\n  width: 60%;\n  border-radius: 100%;\n}\n.person .head .eye {\n  position: absolute;\n  top: 27%;\n  left: 25%;\n  height: 16%;\n  width: 12%;\n  background-color: #444;\n  border-radius: 100%;\n  z-index: 1;\n}\n.person .head .eye:first-of-type {\n  left: auto;\n  right: 25%;\n}\n.person .head .mouth {\n  position: absolute;\n  left: 50%;\n  top: 62%;\n  transform: translateX(-50%);\n  height: 30%;\n  width: 45%;\n  background-color: #444;\n  border-radius: 100%;\n}\n.person .head .mouth:after {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 60%;\n  background-color: #fff;\n  left: 0;\n  top: 50%;\n  border-radius: 0 0 25% 25%;\n}\n.person .head .mouth:before {\n  content: \"\";\n  position: absolute;\n  width: 70%;\n  height: 70%;\n  background-color: #fff;\n  border-radius: 100%;\n  left: 50%;\n  top: 60%;\n  transform: translateX(-50%) translateY(-50%);\n  z-index: 1;\n}\n.person .head .mouth.smile {\n  top: 55%;\n}\n.person .head .mouth.smile:after {\n  top: -10%;\n  border-radius: 25% 25% 0 0;\n}\n.person .head .mouth.smile:before {\n  top: 40%;\n}\n.person .arm.missed,\n.person .body.missed,\n.person .leg.missed {\n  background-color: #ccc;\n}\n.person .arm {\n  position: absolute;\n  width: 60%;\n  height: 2%;\n  background-color: #444;\n  border-radius: 1vmin;\n  transform-origin: top left;\n  transform: rotate(55deg);\n  top: 25%;\n  left: 30%;\n  transition: 0.5s transform linear 0.5s;\n}\n.person .arm.right {\n  transform: rotate(125deg);\n}\n.person .body {\n  position: absolute;\n  top: 25%;\n  left: 30%;\n  width: 90%;\n  height: 2%;\n  background-color: #444;\n  border-radius: 1vmin;\n  transform-origin: top left;\n  transform: rotate(90deg);\n}\n.person .leg {\n  position: absolute;\n  width: 70%;\n  height: 2%;\n  background-color: #444;\n  border-radius: 1vmin;\n  transform-origin: top left;\n  transform: rotate(65deg);\n  top: 57%;\n  left: 30%;\n  transition: 0.5s transform linear 0.5s;\n}\n.person .leg.right {\n  transform: rotate(110deg);\n}\n", ""]);
+exports.push([module.i, ".hanger-area {\n  border-radius: 1vmin;\n  border: 2px dotted #ccc;\n  display: table-cell;\n  position: relative;\n  width: 55vmin;\n}\n@keyframes hang-em-up {\n  0% {\n    top: 10%;\n  }\n  50% {\n    top: 30%;\n  }\n  100% {\n    top: 10%;\n  }\n}\n.hanger.hung {\n  animation: hang-em-up linear 1s;\n}\n.hanger.hung .rope {\n  opacity: 1;\n}\n.hanger {\n  top: 10%;\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  right: 0;\n}\n.lower-beam {\n  width: 90%;\n  border-radius: 25%;\n  border: 0.6vmin solid #333;\n  position: absolute;\n  bottom: 1.3vmin;\n  left: 0;\n  right: 0;\n  margin: 0 auto;\n}\n.vertical-beam {\n  top: 0;\n  border: 0.5vmin solid #333;\n  position: absolute;\n  left: 10vmin;\n  bottom: 1.3vmin;\n}\n.upper-beam {\n  width: 35vmin;\n  border: 0.4vmin solid #333;\n  position: absolute;\n  left: 5vmin;\n  top: 0;\n  border-radius: 25% 35%;\n}\n.rope {\n  opacity: 0;\n  position: absolute;\n  left: 51.8%;\n  top: 0%;\n  height: 10vmin;\n  width: 0.5vmin;\n  background-color: #440505;\n  transition: 0.5s opacity linear 0s;\n}\n.person.hung {\n  bottom: 7vmin;\n}\n.person.hung .arm {\n  transform: rotate(75deg);\n}\n.person.hung .arm.right {\n  transform: rotate(105deg);\n}\n.person.hung .leg {\n  transform: rotate(80deg);\n}\n.person.hung .leg.right {\n  transform: rotate(100deg);\n}\n.person {\n  position: absolute;\n  width: 13vmin;\n  height: 35vmin;\n  bottom: -4.7vmin;\n  left: 25vmin;\n  transition: 0.5s bottom linear 0.5s;\n}\n.person .head.missed {\n  border-color: #ccc;\n}\n.person .head.missed .eye,\n.person .head.missed .frown,\n.person .head.missed .smile {\n  background-color: #ccc;\n}\n.person .head {\n  position: absolute;\n  top: 0%;\n  left: -7%;\n  border: 0.7vmin solid #444;\n  height: 22%;\n  width: 60%;\n  border-radius: 100%;\n}\n.person .head.frown .frown {\n  display: block;\n}\n.person .head.frown .smile,\n.person .head.frown .neutral {\n  display: none;\n}\n.person .head.smile .smile {\n  display: block;\n}\n.person .head.smile .frown,\n.person .head.smile .neutral {\n  display: none;\n}\n.person .head.neutral .neutral {\n  display: block;\n}\n.person .head.neutral .frown,\n.person .head.neutral .smile {\n  display: none;\n}\n.person .head .eye {\n  position: absolute;\n  top: 27%;\n  left: 25%;\n  height: 16%;\n  width: 12%;\n  background-color: #444;\n  border-radius: 100%;\n  z-index: 1;\n}\n.person .head .eye:first-of-type {\n  left: auto;\n  right: 25%;\n}\n.person .head .neutral {\n  position: absolute;\n  left: 50%;\n  top: 72%;\n  transform: translateX(-50%);\n  height: 8%;\n  width: 40%;\n  background-color: #444;\n  border-radius: 1vmin;\n}\n.person .head .frown,\n.person .head .smile {\n  position: absolute;\n  left: 50%;\n  top: 66%;\n  transform: translateX(-50%);\n  height: 30%;\n  width: 45%;\n  background-color: #444;\n  border-radius: 100%;\n}\n.person .head .frown:after,\n.person .head .smile:after {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 60%;\n  background-color: #fff;\n  left: 0;\n  top: 50%;\n  border-radius: 0 0 100% 100%;\n}\n.person .head .frown:before,\n.person .head .smile:before {\n  content: \"\";\n  position: absolute;\n  width: 70%;\n  height: 70%;\n  background-color: #fff;\n  border-radius: 100%;\n  left: 50%;\n  top: 60%;\n  transform: translateX(-50%) translateY(-50%);\n  z-index: 1;\n}\n.person .head .smile {\n  top: 55%;\n}\n.person .head .smile:after {\n  top: -10%;\n  border-radius: 100% 100% 0 0;\n}\n.person .head .smile:before {\n  top: 40%;\n}\n.person .arm.missed,\n.person .body.missed,\n.person .leg.missed {\n  background-color: #ccc;\n}\n.person .arm {\n  position: absolute;\n  width: 60%;\n  height: 2%;\n  background-color: #444;\n  border-radius: 1vmin;\n  transform-origin: top left;\n  transform: rotate(55deg);\n  top: 25%;\n  left: 30%;\n  transition: 0.5s transform linear 0.5s;\n}\n.person .arm.right {\n  transform: rotate(125deg);\n}\n.person .body {\n  position: absolute;\n  top: 25%;\n  left: 30%;\n  width: 90%;\n  height: 2%;\n  background-color: #444;\n  border-radius: 1vmin;\n  transform-origin: top left;\n  transform: rotate(90deg);\n}\n.person .leg {\n  position: absolute;\n  width: 70%;\n  height: 2%;\n  background-color: #444;\n  border-radius: 1vmin;\n  transform-origin: top left;\n  transform: rotate(65deg);\n  top: 57%;\n  left: 30%;\n  transition: 0.5s transform linear 0.5s;\n}\n.person .leg.right {\n  transform: rotate(110deg);\n}\n", ""]);
 
 // exports
 
@@ -28530,13 +28539,13 @@ exports.push([module.i, ".word {\n  display: table;\n  margin: 2vmin auto;\n  pa
 /* 26 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"container\">\n  <h1>hangman</h1>\n  <div class = \"word\">\n\n  </div>\n  <div class = \"loading hidden\">Loading...</div>\n  <div class = \"play-area\">\n    <div class = \"hanger-area\">\n\n    </div>\n    <div class = \"spacer\"></div>\n    <div class = \"controls\">\n      <p class = \"label\">Pick a letter</p>\n      <div class = \"letters-container\">\n\n      </div>\n      <p class = \"label\">or</p>\n      <button class = \"new-game\">New Game</button>\n    </div>\n  </div>\n  <footer>\n    Created by Dmitriy A. Nesterkin &nbsp;<span class = \"copy\">&copy;</span> 2017\n  </footer>\n</div>\n"
+module.exports = "<div class = \"container\">\n  <h1>hangman</h1>\n  <div class = \"word\">\n\n  </div>\n  <div class = \"loading hidden\"><span>Loading...</span></div>\n  <div class = \"play-area\">\n    <div class = \"hanger-area\">\n\n    </div>\n    <div class = \"spacer\"></div>\n    <div class = \"controls\">\n      <p class = \"label\">Pick a letter</p>\n      <div class = \"letters-container\">\n\n      </div>\n      <p class = \"label\">or</p>\n      <button class = \"new-game\">New Game</button>\n    </div>\n  </div>\n  <footer>\n    Created by Dmitriy A. Nesterkin &nbsp;<span class = \"copy\">&copy;</span> 2017\n  </footer>\n</div>\n"
 
 /***/ }),
 /* 27 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <div class = \"hanger\">\n    <div class = \"lower-beam\"></div>\n    <div class = \"vertical-beam\"></div>\n    <div class = \"upper-beam\"></div>\n    <div class = \"rope\"></div>\n  </div>\n  <div class = \"person\">\n    <div class = \"head part-1\">\n      <div class = \"eye\"></div>\n      <div class = \"eye\"></div>\n      <div class = \"mouth\"></div>\n    </div>\n    <div class = \"arm right part-2\"></div>\n    <div class = \"arm left part-3\"></div>\n    <div class = \"body part-4\"></div>\n    <div class = \"leg right part-5\"></div>\n    <div class = \"leg left part-6\"></div>\n  </div>\n</div>\n"
+module.exports = "<div>\n  <div class = \"hanger\">\n    <div class = \"lower-beam\"></div>\n    <div class = \"vertical-beam\"></div>\n    <div class = \"upper-beam\"></div>\n    <div class = \"rope\"></div>\n  </div>\n  <div class = \"person\">\n    <div class = \"head part-1\">\n      <div class = \"eye\"></div>\n      <div class = \"eye\"></div>\n      <div class = \"smile\"></div>\n      <div class = \"frown\"></div>\n      <div class = \"neutral\"></div>\n    </div>\n    <div class = \"arm right part-2\"></div>\n    <div class = \"arm left part-3\"></div>\n    <div class = \"body part-4\"></div>\n    <div class = \"leg right part-5\"></div>\n    <div class = \"leg left part-6\"></div>\n  </div>\n</div>\n"
 
 /***/ }),
 /* 28 */

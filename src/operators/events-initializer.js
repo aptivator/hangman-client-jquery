@@ -23,7 +23,7 @@ export default () => {
       $loading.addClass('hidden');
       $container.removeClass('screen');
       displayer();
-      dataLinker(data);        
+      dataLinker(data);           
     }, err => console.log(err));
   });
   
