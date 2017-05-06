@@ -14,7 +14,7 @@ export default () => {
     let data = new_ ? {} : {letter: $el.text()};
     let loadingTimeout = setTimeout(() => {
       $loading.removeClass('hidden');
-    }, 500);
+    }, 1000);
     
     $container.addClass('screen');
     

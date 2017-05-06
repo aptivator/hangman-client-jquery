@@ -28432,7 +28432,7 @@ exports.default = function () {
     var data = new_ ? {} : { letter: $el.text() };
     var loadingTimeout = setTimeout(function () {
       $loading.removeClass('hidden');
-    }, 500);
+    }, 1000);
 
     $container.addClass('screen');
 
