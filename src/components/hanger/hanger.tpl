@@ -9,7 +9,9 @@
     <div class = "head part-1">
       <div class = "eye"></div>
       <div class = "eye"></div>
-      <div class = "mouth"></div>
+      <div class = "smile"></div>
+      <div class = "frown"></div>
+      <div class = "neutral"></div>
     </div>
     <div class = "arm right part-2"></div>
     <div class = "arm left part-3"></div>

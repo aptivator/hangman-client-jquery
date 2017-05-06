@@ -7,31 +7,39 @@ import hangerTpl        from './hanger.tpl';
 export default class {
   constructor() {
     let $el = $(hangerTpl);
-    let $mouth = $el.find('.mouth');
+    let $head = $el.find('.head');
     let $person = $el.find('.person');
     let $hanger = $el.find('.hanger');
     $(hangerSelector).append($el);
-    _.extend(this, {$el, $mouth, $person, $hanger});
+    _.extend(this, {$el, $head, $person, $hanger});
   }
   
   linker(data) {
-    let {$el, $mouth, $person, $hanger} = this;
-    let {missed, correct, won} = data;
+    let {$el, $head, $person, $hanger} = this;
+    let {missed, correct, won, used} = data;
     
-    if(!missed) {
-      $mouth.removeClass('smile');
+    if(!used.length) {
+      $head.removeClass('smile frown').addClass('neutral');
       $person.removeClass('hung');
       $hanger.removeClass('hung');
       return $el.find('.missed').removeClass('missed');
+    } else {
+      $head.removeClass('neutral');
     }
     
     $el.find(`.part-${missed}`).addClass('missed');
     
-    $mouth[(correct ? 'add' : 'remove') + 'Class']('smile');
+    if(correct) {
+      $head.addClass('smile').removeClass('frown');
+    } else {
+      $head.addClass('frown').removeClass('smile');
+    }
     
     if(won === false) {
       $person.addClass('hung');
       $hanger.addClass('hung');
+    } else if(won) {
+      $person.find('.missed').removeClass('missed');
     }
   }
 }
