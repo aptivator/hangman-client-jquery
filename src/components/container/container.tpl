@@ -3,7 +3,7 @@
   <div class = "word">
 
   </div>
-  <div class = "loading hidden">Loading...</div>
+  <div class = "loading hidden"><span>Loading...</span></div>
   <div class = "play-area">
     <div class = "hanger-area">
 

@@ -41,15 +41,27 @@ body {
 }
 
 .loading {
+  position: relative;
   margin: 1.5vmin 0;
-  font-size: 4vmin;
-  color: #777;
-  text-align: center;
-  animation: fade-in-out linear 2.5s infinite;
+  transition: padding linear 0.3s;
+  padding: 2.2vmin 0;
+  overflow: hidden;
+  
+  span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3vmin;
+    color: #777;
+    text-align: center;
+    animation: fade-in-out linear 2.5s infinite;
+  }
 }
 
 .hidden {
-  display: none !important;
+  padding: 0;
 }
 
 h1 {
