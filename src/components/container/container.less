@@ -41,6 +41,10 @@ body {
 }
 
 .loading {
+  &.hidden {
+    padding: 0;
+  }
+  
   position: relative;
   margin: 1.5vmin 0;
   transition: padding linear 0.3s;
@@ -60,8 +64,10 @@ body {
   }
 }
 
-.hidden {
-  padding: 0;
+.dissolve {
+  opacity: 0;
+  transition: opacity 0.2s linear;
+  pointer-events: none;
 }
 
 h1 {

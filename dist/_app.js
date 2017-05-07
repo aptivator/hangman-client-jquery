@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 40);
+/******/ 	return __webpack_require__(__webpack_require__.s = 39);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -17156,7 +17156,7 @@
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(39)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(38)(module)))
 
 /***/ }),
 /* 1 */
@@ -27558,7 +27558,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(30);
+	fixUrls = __webpack_require__(29);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -27898,11 +27898,11 @@ module.exports = g;
 "use strict";
 
 
-var _uiInitializer = __webpack_require__(21);
+var _uiInitializer = __webpack_require__(20);
 
 var _uiInitializer2 = _interopRequireDefault(_uiInitializer);
 
-var _eventsInitializer = __webpack_require__(20);
+var _eventsInitializer = __webpack_require__(19);
 
 var _eventsInitializer2 = _interopRequireDefault(_eventsInitializer);
 
@@ -27922,7 +27922,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-__webpack_require__(31);
+__webpack_require__(30);
 
 var _jquery = __webpack_require__(1);
 
@@ -27930,7 +27930,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var _vars = __webpack_require__(2);
 
-var _container = __webpack_require__(26);
+var _container = __webpack_require__(25);
 
 var _container2 = _interopRequireDefault(_container);
 
@@ -27960,7 +27960,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(32);
+__webpack_require__(31);
 
 var _jquery = __webpack_require__(1);
 
@@ -27972,7 +27972,7 @@ var _lodash2 = _interopRequireDefault(_lodash);
 
 var _vars = __webpack_require__(2);
 
-var _hanger = __webpack_require__(27);
+var _hanger = __webpack_require__(26);
 
 var _hanger2 = _interopRequireDefault(_hanger);
 
@@ -28049,7 +28049,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(33);
+__webpack_require__(32);
 
 var _jquery = __webpack_require__(1);
 
@@ -28121,7 +28121,7 @@ var _lodash = __webpack_require__(0);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _letterControls = __webpack_require__(28);
+var _letterControls = __webpack_require__(27);
 
 var _letterControls2 = _interopRequireDefault(_letterControls);
 
@@ -28204,7 +28204,7 @@ var _lodash = __webpack_require__(0);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _word = __webpack_require__(29);
+var _word = __webpack_require__(28);
 
 var _word2 = _interopRequireDefault(_word);
 
@@ -28225,7 +28225,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(34);
+__webpack_require__(33);
 
 var _jquery = __webpack_require__(1);
 
@@ -28287,7 +28287,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.url = exports.id = undefined;
 
-var _v = __webpack_require__(38);
+var _v = __webpack_require__(37);
 
 var _v2 = _interopRequireDefault(_v);
 
@@ -28314,7 +28314,7 @@ var _lodash = __webpack_require__(0);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _superagent = __webpack_require__(35);
+var _superagent = __webpack_require__(34);
 
 var _superagent2 = _interopRequireDefault(_superagent);
 
@@ -28382,31 +28382,6 @@ var _jquery = __webpack_require__(1);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _lodash = __webpack_require__(0);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _lodash2.default.once(function () {
-  return (0, _jquery2.default)('body').removeAttr('style');
-});
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _jquery = __webpack_require__(1);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
 var _api = __webpack_require__(17);
 
 var _api2 = _interopRequireDefault(_api);
@@ -28414,10 +28389,6 @@ var _api2 = _interopRequireDefault(_api);
 var _dataLinker = __webpack_require__(18);
 
 var _dataLinker2 = _interopRequireDefault(_dataLinker);
-
-var _displayer = __webpack_require__(19);
-
-var _displayer2 = _interopRequireDefault(_displayer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28434,14 +28405,30 @@ exports.default = function () {
       $loading.removeClass('hidden');
     }, 1000);
 
-    $container.addClass('screen');
-
-    _api2.default[method](data).then(function (data) {
+    var dataHandler = function dataHandler(data) {
       clearTimeout(loadingTimeout);
       $loading.addClass('hidden');
       $container.removeClass('screen');
-      (0, _displayer2.default)();
       (0, _dataLinker2.default)(data);
+    };
+
+    var oncer = function oncer() {
+      setTimeout(function () {
+        var index = methods.indexOf(oncer);
+        (0, _jquery2.default)('#app').removeAttr('style');
+        (0, _jquery2.default)('.overlay').addClass('dissolve');
+        methods.splice(index, 1);
+      }, 2000);
+    };
+
+    var methods = [dataHandler, oncer];
+
+    $container.addClass('screen');
+
+    _api2.default[method](data).then(function (data) {
+      methods.forEach(function (method) {
+        return method(data);
+      });
     }, function (err) {
       return console.log(err);
     });
@@ -28451,7 +28438,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28479,7 +28466,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28488,13 +28475,13 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Ope
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Coming+Soon);", ""]);
 
 // module
-exports.push([module.i, "* {\n  border: 0;\n  padding: 0;\n  margin: 0;\n}\nbody {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  background-color: #fff;\n}\n.container {\n  font-family: cursive;\n  position: fixed;\n  top: 45%;\n  left: 50%;\n  transform: translateX(-50%) translateY(-50%);\n}\n.container.screen::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 1;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0);\n}\n@keyframes fade-in-out {\n  0% {\n    opacity: 0.4;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.4;\n  }\n}\n.loading {\n  position: relative;\n  margin: 1.5vmin 0;\n  transition: padding linear 0.3s;\n  padding: 2.2vmin 0;\n  overflow: hidden;\n}\n.loading span {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n  font-size: 3vmin;\n  color: #777;\n  text-align: center;\n  animation: fade-in-out linear 2s infinite;\n}\n.hidden {\n  padding: 0;\n}\nh1 {\n  font: bold 8vmin/2 cursive;\n  text-transform: capitalize;\n  letter-spacing: 0.5vmin;\n  text-align: center;\n  color: #444;\n  font-variant: small-caps;\n}\n.play-area {\n  display: table;\n  margin: 0 auto;\n  white-space: nowrap;\n  width: 80vmin;\n}\nfooter {\n  position: relative;\n  bottom: -5vmin;\n  color: #777;\n  text-align: center;\n  font-size: 1.5vmin;\n}\n.copy {\n  font-family: 'Coming Soon';\n  font-size: 1.2em;\n}\n.spacer {\n  display: table-cell;\n  width: 2vmin;\n}\n", ""]);
+exports.push([module.i, "* {\n  border: 0;\n  padding: 0;\n  margin: 0;\n}\nbody {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  background-color: #fff;\n}\n.container {\n  font-family: cursive;\n  position: fixed;\n  top: 45%;\n  left: 50%;\n  transform: translateX(-50%) translateY(-50%);\n}\n.container.screen::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 1;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0);\n}\n@keyframes fade-in-out {\n  0% {\n    opacity: 0.4;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.4;\n  }\n}\n.loading {\n  position: relative;\n  margin: 1.5vmin 0;\n  transition: padding linear 0.3s;\n  padding: 2.2vmin 0;\n  overflow: hidden;\n}\n.loading.hidden {\n  padding: 0;\n}\n.loading span {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n  font-size: 3vmin;\n  color: #777;\n  text-align: center;\n  animation: fade-in-out linear 2s infinite;\n}\n.dissolve {\n  opacity: 0;\n  transition: opacity 0.2s linear;\n  pointer-events: none;\n}\nh1 {\n  font: bold 8vmin/2 cursive;\n  text-transform: capitalize;\n  letter-spacing: 0.5vmin;\n  text-align: center;\n  color: #444;\n  font-variant: small-caps;\n}\n.play-area {\n  display: table;\n  margin: 0 auto;\n  white-space: nowrap;\n  width: 80vmin;\n}\nfooter {\n  position: relative;\n  bottom: -5vmin;\n  color: #777;\n  text-align: center;\n  font-size: 1.5vmin;\n}\n.copy {\n  font-family: 'Coming Soon';\n  font-size: 1.2em;\n}\n.spacer {\n  display: table-cell;\n  width: 2vmin;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28508,7 +28495,7 @@ exports.push([module.i, ".hanger-area {\n  border-radius: 1vmin;\n  border: 2px 
 
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28522,7 +28509,7 @@ exports.push([module.i, ".controls {\n  padding: 1vmin;\n  margin-top: 2vmin;\n 
 
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28536,31 +28523,31 @@ exports.push([module.i, ".word {\n  display: table;\n  margin: 2vmin auto;\n  pa
 
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class = \"container\">\n  <h1>hangman</h1>\n  <div class = \"word\">\n\n  </div>\n  <div class = \"loading hidden\"><span>Loading...</span></div>\n  <div class = \"play-area\">\n    <div class = \"hanger-area\">\n\n    </div>\n    <div class = \"spacer\"></div>\n    <div class = \"controls\">\n      <p class = \"label\">Pick a letter</p>\n      <div class = \"letters-container\">\n\n      </div>\n      <p class = \"label\">or</p>\n      <button class = \"new-game\">New Game</button>\n    </div>\n  </div>\n  <footer>\n    Created by Dmitriy A. Nesterkin &nbsp;<span class = \"copy\">&copy;</span> 2017\n  </footer>\n</div>\n"
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports) {
 
 module.exports = "<div>\n  <div class = \"hanger\">\n    <div class = \"lower-beam\"></div>\n    <div class = \"vertical-beam\"></div>\n    <div class = \"upper-beam\"></div>\n    <div class = \"rope\"></div>\n  </div>\n  <div class = \"person\">\n    <div class = \"head part-1\">\n      <div class = \"eye\"></div>\n      <div class = \"eye\"></div>\n      <div class = \"smile\"></div>\n      <div class = \"frown\"></div>\n      <div class = \"neutral\"></div>\n    </div>\n    <div class = \"arm right part-2\"></div>\n    <div class = \"arm left part-3\"></div>\n    <div class = \"body part-4\"></div>\n    <div class = \"leg right part-5\"></div>\n    <div class = \"leg left part-6\"></div>\n  </div>\n</div>\n"
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class = \"letters\">\n  <% _.range(97, 123).forEach(code => { %>\n  <% let letter = String.fromCharCode(code) %>\n    <div class = \"letter-control <%= letter %>\"><%= letter %></div>\n  <% }); %>\n</div>\n"
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = "<div>\n  <% _.each(word, letter => { %>\n    <div class = \"letter\"><span></span></div>\n  <% }); %>\n</div>\n"
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports) {
 
 
@@ -28655,6 +28642,37 @@ module.exports = function (css) {
 
 
 /***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(21);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(4)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/dist/index.js!./container.less", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/dist/index.js!./container.less");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
 /* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28675,8 +28693,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/dist/index.js!./container.less", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/dist/index.js!./container.less");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/dist/index.js!./hanger.less", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/dist/index.js!./hanger.less");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -28706,8 +28724,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/dist/index.js!./hanger.less", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/dist/index.js!./hanger.less");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/dist/index.js!./letter-controls.less", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/dist/index.js!./letter-controls.less");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -28737,37 +28755,6 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/dist/index.js!./letter-controls.less", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/dist/index.js!./letter-controls.less");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(25);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(4)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
 		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/dist/index.js!./word.less", function() {
 			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/dist/index.js!./word.less");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
@@ -28779,7 +28766,7 @@ if(false) {
 }
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var require;var require;(function(f){if(true){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.superagent = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return require(o,!0);if(i)return require(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
@@ -30740,7 +30727,7 @@ request.put = function(url, data, fn){
 });
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports) {
 
 /**
@@ -30769,7 +30756,7 @@ module.exports = bytesToUuid;
 
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {// Unique ID creation requires a high quality random # generator.  In the
@@ -30809,11 +30796,11 @@ module.exports = rng;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var rng = __webpack_require__(37);
-var bytesToUuid = __webpack_require__(36);
+var rng = __webpack_require__(36);
+var bytesToUuid = __webpack_require__(35);
 
 function v4(options, buf, offset) {
   var i = buf && offset || 0;
@@ -30844,7 +30831,7 @@ module.exports = v4;
 
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -30872,7 +30859,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(7);

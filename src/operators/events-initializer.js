@@ -1,7 +1,6 @@
 import $          from 'jquery';
 import api        from '../lib/api';
 import dataLinker from './data-linker';
-import displayer  from './displayer';
 
 export default () => {
   let $container = $('.container');
@@ -16,14 +15,28 @@ export default () => {
       $loading.removeClass('hidden');
     }, 1000);
     
+    let dataHandler = data => {
+      clearTimeout(loadingTimeout);
+      $loading.addClass('hidden');
+      $container.removeClass('screen');     
+      dataLinker(data);
+    };
+    
+    let oncer = () => {
+      setTimeout(() => {
+        let index = methods.indexOf(oncer);
+        $('#app').removeAttr('style');
+        $('.overlay').addClass('dissolve');
+        methods.splice(index, 1);
+      }, 2000);
+    };
+    
+    let methods = [dataHandler, oncer];
+    
     $container.addClass('screen');
     
     api[method](data).then(data => {
-      clearTimeout(loadingTimeout);
-      $loading.addClass('hidden');
-      $container.removeClass('screen');
-      displayer();
-      dataLinker(data);           
+      methods.forEach(method => method(data));         
     }, err => console.log(err));
   });
   
