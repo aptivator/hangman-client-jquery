@@ -1,3 +1,5 @@
+/* adapted from https://codepen.io/jczimm/pen/vEBpoL */
+
 .overlay {
   background-color: rgba(30, 30, 30, 0.8);
   position: fixed;
