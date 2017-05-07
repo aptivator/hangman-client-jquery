@@ -6,6 +6,24 @@ export default () => {
   let $container = $('.container');
   let $loading = $('.loading');
   
+  let dataHandler = (data, loadingTimeout) => {
+    clearTimeout(loadingTimeout);
+    $loading.addClass('hidden');
+    $container.removeClass('screen');     
+    dataLinker(data);    
+  };
+  
+  let displayer = () => {
+    setTimeout(() => {
+      let index = methods.indexOf(displayer);
+      $('#app').removeAttr('style');
+      $('.overlay').addClass('dissolve');
+      methods.splice(index, 1);      
+    }, 2000);
+  };
+  
+  let methods = [dataHandler, displayer];
+  
   $('.letter-control, .new-game').on('click', evt => {
     let $el = $(evt.target);
     let new_ = $el.hasClass('new-game');
@@ -15,28 +33,10 @@ export default () => {
       $loading.removeClass('hidden');
     }, 1000);
     
-    let dataHandler = data => {
-      clearTimeout(loadingTimeout);
-      $loading.addClass('hidden');
-      $container.removeClass('screen');     
-      dataLinker(data);
-    };
-    
-    let oncer = () => {
-      setTimeout(() => {
-        let index = methods.indexOf(oncer);
-        $('#app').removeAttr('style');
-        $('.overlay').addClass('dissolve');
-        methods.splice(index, 1);
-      }, 2000);
-    };
-    
-    let methods = [dataHandler, oncer];
-    
     $container.addClass('screen');
     
     api[method](data).then(data => {
-      methods.forEach(method => method(data));         
+      methods.forEach(method => method(data, loadingTimeout));         
     }, err => console.log(err));
   });
   
