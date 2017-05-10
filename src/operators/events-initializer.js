@@ -5,6 +5,7 @@ import dataLinker from './data-linker';
 export default () => {
   let $container = $('.container');
   let $loading = $('.loading');
+  let $overlay = $('.overlay');
   
   let dataHandler = (data, loadingTimeout) => {
     clearTimeout(loadingTimeout);
@@ -16,9 +17,12 @@ export default () => {
   let displayer = () => {
     setTimeout(() => {
       let index = methods.indexOf(displayer);
+      methods.splice(index, 1);  
       $('#app').removeAttr('style');
-      $('.overlay').addClass('dissolve');
-      methods.splice(index, 1);      
+      $overlay.one('transitionend', () => {
+        $overlay.addClass('hide');
+      });
+      $overlay.addClass('dissolve');
     }, 2000);
   };
   

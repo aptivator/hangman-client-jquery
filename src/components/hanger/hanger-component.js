@@ -23,7 +23,9 @@ export default class {
       $person.removeClass('hung');
       $hanger.removeClass('hung');
       return $el.find('.missed').removeClass('missed');
-    } else {
+    }
+    
+    if(used.length === 1) {
       $head.removeClass('neutral');
     }
     

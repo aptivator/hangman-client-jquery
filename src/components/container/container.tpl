@@ -1,7 +1,9 @@
 <div class = "container">
   <h1>hangman</h1>
-  <div class = "word">
-
+  <div class = "word-container">
+    <div class = "word">
+  
+    </div>
   </div>
   <div class = "loading hidden"><span>Loading...</span></div>
   <div class = "play-area">

@@ -1,6 +1,6 @@
 .hanger-area {
   border-radius: 1vmin;
-  border: 2px dotted #ccc;
+  border: 1px solid #ccc;
   display: table-cell;
   position: relative;
   width: 55vmin;
@@ -61,7 +61,7 @@
   position: absolute;
   left: 51.8%;
   top: 0%;
-  height: 9.5vmin;
+  height: 10vmin;
   width: 0.5vmin;
   background-color: #440505;
   transition: 0.5s opacity linear 0s;
@@ -95,24 +95,40 @@
   left: 25vmin;
   transition: 0.5s bottom linear 0.5s;
   
+  .head::before {
+    content: "";
+    position: absolute;
+    top: -8%;
+    left: -10%;
+    width: 120%;
+    height: 116%;
+    opacity: 0;
+    background-color: #fff;
+    z-index: 100;
+  }
+  
   .head.missed {
-    //border-color: #ccc;
-    opacity: 0.5;
-    .eye, .frown, .smile {
-      //background-color: #ccc;
+    &::before {
+      opacity: 0.5;
     }
+  }
+  
+  .head-wrapper {
+    position: absolute;
+    height: 22%;
+    width: 60%;
+    top: 0%;
+    left: -7%;
+    z-index: 10;
+    background-color: #fff;
   }
   
   .head {
     position: absolute;
-    top: 0%;
-    left: -7%;
+    width: 100%;
+    height: 100%;
     border: 0.7vmin solid #444;
-    height: 22%;
-    width: 60%;
     border-radius: 100%;
-    opacity: 1;
-    transition: opacity 0.3s linear;
     
     &.frown {
       .frown {
@@ -168,7 +184,7 @@
       height: 8%;
       width: 40%;
       background-color: #444;
-      border-radius: 1vmin;
+      border-radius: 50%;
     }
     
     .frown, .smile {
@@ -234,6 +250,7 @@
     transform: rotate(55deg);
     top: 25%;
     left: 30%;
+    backface-visibility: hidden;
     transition: 0.5s transform linear 0.5s, background-color linear 0.3s;
   }
   
@@ -242,6 +259,7 @@
   }
   
   .body {
+    backface-visibility: hidden;
     position: absolute;
     top: 25%;
     left: 30%;

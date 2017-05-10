@@ -1,10 +1,25 @@
-.word {
+.word-container {
+  height: 11vmin;
+  overflow: hidden;
+  position: relative;
   display: table;
-  margin: 2vmin auto;
-  padding: 3vmin 3vmin 2vmin;
-  border: 2px dotted #ccc;
+  margin: 0 auto;
+
+}
+
+.word {
+  border: 1px solid #ccc;
   border-radius: 1vmin;
+  display: table;
+  position: relative;
+  top: -12vmin;
+  padding: 3vmin 3vmin 2vmin;
   white-space: nowrap;
+  transition: top linear 0.35s;
+  
+  &.active {
+    top: 0vmin;
+  }
   
   .letter-wrapper {
     display: inline-block;

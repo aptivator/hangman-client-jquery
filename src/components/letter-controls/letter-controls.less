@@ -1,7 +1,7 @@
 .controls {
   padding: 1vmin;
   margin-top: 2vmin;
-  border: 2px dotted #ddd;
+  border: 1px solid #ddd;
   border-radius: 1vmin;
   display: table-cell;
 }
@@ -35,6 +35,7 @@
     text-transform: uppercase;
     color: #444;
     cursor: pointer;
+    transition: color linear 0.3s;
     
     &:hover {
       border-radius: 1vmin;
@@ -42,7 +43,7 @@
     }
     
     &.picked {
-      color: #ddd;
+      color: #aaa;
       pointer-events:none;
     }
     

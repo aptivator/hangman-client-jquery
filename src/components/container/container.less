@@ -8,9 +8,6 @@
 }
 
 body {
-  -webkit-user-select: none;  
-  -moz-user-select: none;    
-  -ms-user-select: none;      
   user-select: none;
   background-color: #fff;
 }
@@ -42,6 +39,7 @@ body {
 
 .loading {
   &.hidden {
+    display: block;
     padding: 0;
   }
   
@@ -64,10 +62,13 @@ body {
   }
 }
 
+.hide {
+  display: none !important;
+}
+
 .dissolve {
   opacity: 0;
-  transition: opacity 0.2s linear;
-  pointer-events: none;
+  transition: opacity 0.3s linear;
 }
 
 h1 {

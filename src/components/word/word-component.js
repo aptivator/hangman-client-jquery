@@ -1,8 +1,8 @@
 import './word.less';
-import $                  from 'jquery';
-import _                  from 'lodash';
-import {wordSelector}     from '../../lib/vars';
-import lettersInitializer from './parts/letters-initializer';
+import $               from 'jquery';
+import _               from 'lodash';
+import {wordSelector}  from '../../lib/vars';
+import wordInitializer from './components/word-initializer';
 
 export default class {
   constructor() {
@@ -13,17 +13,18 @@ export default class {
   linker(data) {
     let {$el} = this;
     let {used, word} = data;
+
     if(!used.length) {
-      return lettersInitializer(this, word);
+      return wordInitializer(this, word);
     }
     
     $el.find('.letter-wrapper').each((idx, el) => {
-      let $wrapper = $(el);
-      let $letter = $wrapper.find('.letter');
+      let $letterWrapper = $(el);
+      let $letter = $letterWrapper.find('.letter');
       let letter = word[idx];
       if(!$letter.text() && letter) {
         $letter.text(letter);
-        $wrapper.addClass('show');
+        $letterWrapper.addClass('show');
       }
     });
   }
