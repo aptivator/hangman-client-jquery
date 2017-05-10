@@ -6,13 +6,14 @@
   border-radius: 1vmin;
   white-space: nowrap;
   
-  .letter {
+  .letter-wrapper {
     display: inline-block;
     height: 5vmin;
     width: 6vmin;
     position: relative;
+    perspective: 20vmin;
     
-    span {
+    .letter, .cover {
       position: absolute;
       top: -0.5vmin;
       left: 0vmin;
@@ -22,18 +23,37 @@
       color: #666;
       text-transform: uppercase;
       text-align: center;
+      transform-style: preserve-3d;
+      transform-origin: center center;
+      backface-visibility: hidden;
+      transition: transform 0.4s linear;
+    }
+    
+    .letter {
+      transform: rotateY(-180deg);
+    }
+    
+    .cover::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: -1vmin;
+      border: 1px solid #999;
+      background-color: #ccc;
+    }
+    
+    &.show {
+      .letter {
+        transform: rotateY(0deg);
+      }
       
-      &:empty::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        left: 0;
-        bottom: -1vmin;
-        border: 1px solid #999;
+      .cover {
+        transform: rotateY(180deg);
       }
     }
     
-    & + .letter {
+    & + .letter-wrapper {
       margin-left: 3vmin;
     }
   }

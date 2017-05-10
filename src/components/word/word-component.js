@@ -17,8 +17,14 @@ export default class {
       return lettersInitializer(this, word);
     }
     
-    $el.find('span').each((idx, el) => {
-      $(el).text(word[idx]);
+    $el.find('.letter-wrapper').each((idx, el) => {
+      let $wrapper = $(el);
+      let $letter = $wrapper.find('.letter');
+      let letter = word[idx];
+      if(!$letter.text() && letter) {
+        $letter.text(letter);
+        $wrapper.addClass('show');
+      }
     });
   }
 }
