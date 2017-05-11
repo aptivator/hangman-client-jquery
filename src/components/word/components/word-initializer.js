@@ -11,7 +11,7 @@ export default (instance, word) => {
         let $letterWrappers = $el.find('.letter-wrapper');
         let $letters = $letterWrappers.find('.letter:not(:empty)');
         if($letters.length) {
-          let duration = duration_($letters.eq(0));
+          let duration = duration_($letters.eq(0)) + 200;
           setTimeout(() => done(), duration);
           return $letterWrappers.removeClass('show');
         }
