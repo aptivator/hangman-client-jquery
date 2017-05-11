@@ -181,10 +181,24 @@
       left: 50%;
       top: 72%;
       transform: translateX(-50%);
-      height: 8%;
-      width: 40%;
+      height: 8.5%;
+      width: 35%;
       background-color: #444;
-      border-radius: 50%;
+      
+      &::before, &::after {
+        content: "";
+        position: absolute;
+        width: 20%;
+        height: 100%;
+        background-color: inherit;
+        border-radius: 100%;
+        left: -11.43%;
+      }
+      
+      &::after {
+        left: auto;
+        right: -11.43%;
+      }
     }
     
     .frown, .smile {
