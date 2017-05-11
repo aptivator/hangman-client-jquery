@@ -1,6 +1,8 @@
-import async_             from 'async';
-import duration_          from '../lib/duration';
-import lettersInitializer from './letters-initializer';
+import $          from 'jquery';
+import _          from 'lodash';
+import async_     from 'async';
+import duration_  from '../lib/duration';
+import wordTpl    from '../tpl/word-tpl';
 
 export default (instance, word) => {
   let {$el, $parentEl} = instance;
@@ -34,6 +36,15 @@ export default (instance, word) => {
       throw err;
     }
     
-    lettersInitializer(instance, word);
+    let tpl = wordTpl({word});
+    
+    if($el) {
+      $el.remove();
+    }
+    
+    $el = $(tpl);
+    $parentEl.append($el);
+    _.extend(instance, {$el});
+    setTimeout(() => $parentEl.addClass('active'), 100);
   });  
 };
