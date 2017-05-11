@@ -1,9 +1,9 @@
 import _          from 'lodash';
 import components from '../components/components';
 
-export default () => {
+export default $ => {
   _.each(components, Constructor => {
-    let instance = new Constructor();
+    let instance = new Constructor($);
     _.extend(Constructor, {instance});
   });
 };

@@ -1,11 +1,11 @@
 import './hanger.less';
-import $                from 'jquery';
+import $_               from 'jquery';
 import _                from 'lodash';
 import {hangerSelector} from '../../lib/vars';
 import hangerTpl        from './hanger.tpl';
 
 export default class {
-  constructor() {
+  constructor($ = $_) {
     let $el = $(hangerTpl);
     let $head = $el.find('.head');
     let $person = $el.find('.person');
@@ -14,7 +14,7 @@ export default class {
     _.extend(this, {$el, $head, $person, $hanger});
   }
   
-  linker(data) {
+  linker(data, $ = $_) {
     let {$el, $head, $person, $hanger} = this;
     let {missed, correct, won, used} = data;
     

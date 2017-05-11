@@ -1,6 +1,6 @@
 import _          from 'lodash';
-import superagent from 'superagent/superagent';
 import {id, url}  from './api-configs';
+import superagent from './superagent';
 
 export default ['new', 'play'].reduce((o, path) => {
   o[path] = (data = {}) => {
