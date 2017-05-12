@@ -1,22 +1,24 @@
-import './word.less';
-import $               from 'jquery';
+import wordLess        from './word.less';
+import $_              from 'jquery';
 import _               from 'lodash';
 import {wordSelector}  from '../../lib/vars';
 import wordInitializer from './components/word-initializer';
 
 export default class {
-  constructor() {
+  constructor($ = $_) {
     let $parentEl = $(wordSelector);
     _.extend(this, {$parentEl});
   }
   
-  linker(data) {
+  linker(data, $ = $_) {
     let {$el} = this;
     let {used, word} = data;
 
     if(!used.length) {
       return wordInitializer(this, word);
     }
+    
+    console.log(word);
     
     $el.find('.letter-wrapper').each((idx, el) => {
       let $letterWrapper = $(el);

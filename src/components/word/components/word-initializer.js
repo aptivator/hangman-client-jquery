@@ -15,7 +15,7 @@ export default (instance, word) => {
         if($letters.length) {
           let duration = duration_($letters.eq(0)) + 200;
           setTimeout(() => done(), duration);
-          return $letterWrappers.removeClass('show');
+          return $letterWrappers.addClass('complete');
         }
       }
       

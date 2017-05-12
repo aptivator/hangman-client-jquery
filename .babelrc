@@ -1,0 +1,20 @@
+{
+  "presets": ["es2015"],
+  "plugins": [
+    "transform-async-to-generator",
+    "transform-regenerator",
+    [
+      "transform-runtime",
+      {
+        "polyfill": false,
+        "regenerator": true
+      }
+    ],
+    ["babel-plugin-inline-import", {
+      "extensions": [
+        ".less",
+        ".tpl"
+      ]
+    }]
+  ]
+}

@@ -1,8 +1,8 @@
-import $          from 'jquery';
+import $_         from 'jquery';
 import api        from '../lib/api';
 import dataLinker from './data-linker';
 
-export default () => {
+export default ($ = $_) => {
   let $container = $('.container');
   let $loading = $('.loading');
   let $overlay = $('.overlay');

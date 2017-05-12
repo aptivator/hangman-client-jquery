@@ -68,6 +68,16 @@
       }
     }
     
+    &.show.complete {
+      .letter {
+        transform: rotateY(180deg);
+      }
+      
+      .cover {
+        transform: rotateY(360deg);
+      }      
+    }
+    
     & + .letter-wrapper {
       margin-left: 3vmin;
     }

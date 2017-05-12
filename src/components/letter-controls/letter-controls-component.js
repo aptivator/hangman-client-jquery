@@ -1,11 +1,11 @@
-import './letter-controls.less';
-import $                        from 'jquery';
+import letterControlsLess       from './letter-controls.less';
+import $_                       from 'jquery';
 import _                        from 'lodash';
 import {letterControlsSelector} from '../../lib/vars';
 import letterControlsTpl        from './tpl/letter-controls-tpl';
 
 export default class {
-  constructor() {
+  constructor($ = $_) {
     let $el = $(letterControlsTpl());
     $(letterControlsSelector).append($el);
     _.extend(this, {$el});
