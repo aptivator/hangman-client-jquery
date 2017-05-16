@@ -1,9 +1,9 @@
 .hanger-area {
-  border-radius: 1vmin;
+  .radius(1vmin);
+  .table-cell;
+  .relative;
+  .dim(55vmin);
   border: 1px solid #ccc;
-  display: table-cell;
-  position: relative;
-  width: 55vmin;
 }
 
 @keyframes hang-em-up {
@@ -21,49 +21,37 @@
 }
 
 .hanger {
-  top: 10%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  .absolute(10%; 0; 0; 0);
 }
 
-.lower-beam {
-  width: 90%;
-  border-radius: 25%;
+.beam {
   border: 0.6vmin solid #333;
-  position: absolute;
-  bottom: 1.3vmin;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
 }
 
-.vertical-beam {
-  top: 0;
-  border: 0.5vmin solid #333;
-  position: absolute;
-  left: 10vmin;
-  bottom: 1.3vmin;
+.beam-lower {
+  .radius(25%);
+  .dim(90%);
+  .absolute(auto; 0; 1.3vmin; 0);
+  .center-xm;
 }
 
-.upper-beam {
-  width: 35vmin;
-  border: 0.4vmin solid #333;
-  position: absolute;
-  left: 5vmin;
-  top: 0;
-  border-radius: 25% 35%;
+.beam-upper {
+  .absolute(0; auto; 1.3vmin; 10vmin);
+  border-width: 0.5vmin;
+}
+
+.beam-vertical {
+  .dim(35vmin);
+  .absolute(@top: 0; @left: 5vmin);
+  .radius(25% 35%);
+  border-width: 0.4vmin;
 }
 
 .rope {
+  .dim(0.5vmin; 10vmin);
+  .absolute(@top: 0; @left: 51.8%);
+  .bg-brown;
   opacity: 0;
-  position: absolute;
-  left: 51.8%;
-  top: 0%;
-  height: 10vmin;
-  width: 0.5vmin;
-  background-color: #440505;
   transition: 0.5s opacity linear 0s;
 }
 
@@ -71,105 +59,89 @@
   bottom: 7vmin;
   
   .arm {
-    transform: rotate(75deg);
+    .rotate(75deg);
   }
   
   .arm.right {
-    transform: rotate(105deg);
+    .rotate(105deg);
   }
   
   .leg {
-    transform: rotate(80deg);
+    .rotate(80deg);
   }
   
   .leg.right {
-    transform: rotate(100deg);
+    .rotate(100deg);
   }
 }
 
 .person {
-  position: absolute;
-  width: 13vmin;
-  height: 35vmin;
-  bottom: -4.7vmin;
-  left: 25vmin;
+  .dim(13vmin; 35vmin);
+  .absolute(@bottom: -4.7vmin; @left: 25vmin);
   transition: 0.5s bottom linear 0.5s;
   
   .head::before {
-    content: "";
-    position: absolute;
-    top: -8%;
-    left: -10%;
-    width: 120%;
-    height: 116%;
+    .content;
+    .dim(120%; 116%);
+    .absolute(@top: -8%; @left: -10%; @z-index: 1);
+    .bg-white;
     opacity: 0;
-    background-color: #fff;
-    z-index: 100;
     transition: opacity linear 0.3s;
   }
   
   .head.missed {
     &::before {
       opacity: 0.5;
+      z-index: 2;
     }
   }
   
   .head-wrapper {
-    position: absolute;
-    height: 22%;
-    width: 60%;
-    top: 0%;
-    left: -7%;
-    z-index: 10;
-    background-color: #fff;
+    .dim(60%; 22%);
+    .absolute(@top: 0; @left: -7%; @z-index: 10);
+    .bg-white;
   }
   
   .head {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    .absolute;
+    .dim(100%; 100%);
+    .radius(100%);
     border: 0.7vmin solid #444;
-    border-radius: 100%;
     
     &.frown {
       .frown {
-        display: block;
+        .block;
       }
       
       .smile, .neutral {
-        display: none;
+        .hidden;
       }
     }
     
     &.smile {
       .smile {
-        display: block;
+        .block;
       }
       
       .frown, .neutral {
-        display: none;
+        .hidden;
       }
     }
     
     &.neutral {
       .neutral {
-        display: block;
+        .block;
       }
       
       .frown, .smile {
-        display: none;
+        .hidden;
       }
     }
     
     .eye {
-      position: absolute;
-      top: 27%;
-      left: 25%;
-      height: 16%;
-      width: 12%;
-      background-color: #444;
-      border-radius: 100%;
-      z-index: 1;
+      .dim(12%; 16%);
+      .absolute(@top: 27%; @left: 25%; @z-index: 1);
+      .round;
     }
     
     .eye:first-of-type {
@@ -178,22 +150,16 @@
     }
     
     .neutral {
-      position: absolute;
-      left: 50%;
-      top: 72%;
-      transform: translateX(-50%);
-      height: 8.5%;
-      width: 35%;
-      background-color: #444;
+      .dim(35%; 8.5%);
+      .center-x;
+      .absolute(@top: 72%; @left: 50%);
       
       &::before, &::after {
-        content: "";
-        position: absolute;
-        width: 20%;
-        height: 100%;
-        background-color: inherit;
-        border-radius: 100%;
-        left: -11.43%;
+        .content;
+        .dim(20%; 100%);
+        .round;
+        .absolute(@left: -11.43%);
+        .bg-parent;
       }
       
       &::after {
@@ -203,38 +169,33 @@
     }
     
     .frown, .smile {
-      position: absolute;
-      left: 50%;
-      top: 66%;
-      transform: translateX(-50%);
-      height: 30%;
-      width: 45%;
-      background-color: #444;
-      border-radius: 100%;
+      .dim(45%; 30%);
+      .center-x;
+      .absolute(@top: 66%; @left: 50%);
+      .round;
+      
+      &::after, &::before {
+        .bg-white;
+      }
       
       &:after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 60%;
-        background-color: #fff;
-        left: 0;
-        top: 50%;
-        border-radius: 0 0 100% 100%;
+        .content;
+        .dim(100%; 60%);
+        .absolute(@top: 50%; @left: 0);
+        .radius(0 0 100% 100%);
       }
       
       &:before {
-        content: "";
-        position: absolute;
-        width: 70%;
-        height: 70%;
-        background-color: #fff;
-        border-radius: 100%;
-        left: 50%;
-        top: 60%;
-        transform: translateX(-50%) translateY(-50%);
-        z-index: 1;
+        .content;
+        .dim(70%; 70%);
+        .round;
+        .center-xy;
+        .absolute(@top: 60%; @left: 50%; @z-index: 1);
       }
+    }
+    
+    .eye, .neutral, .frown, .smile {
+      .bg-444;
     }
     
     .smile {
@@ -242,7 +203,7 @@
       
       &:after {
         top: -10%;
-        border-radius: 100% 100% 0 0;
+        .radius(100% 100% 0 0);
       }
       
       &:before {
@@ -252,55 +213,47 @@
   }
   
   .arm.missed, .body.missed, .leg.missed {
-    background-color: #aaa;
+    .bg-aaa;
   }
   
   .arm {
-    position: absolute;
-    width: 60%;
-    height: 2%;
-    background-color: #444;
-    border-radius: 1vmin;
-    transform-origin: top left;
-    transform: rotate(55deg);
-    top: 25%;
-    left: 30%;
+    .dim(60%; 2%);
+    .absolute(@top: 25%; @left: 30%);
+    .radius(1vmin);
+    .rotate(55deg);
     backface-visibility: hidden;
-    transition: 0.5s transform linear 0.5s, background-color linear 0.3s;
   }
   
   .arm.right {
-    transform: rotate(125deg);
+    .rotate(125deg);
   }
   
   .body {
-    backface-visibility: hidden;
-    position: absolute;
-    top: 25%;
-    left: 30%;
-    width: 90%;
-    height: 2%;
-    background-color: #444;
-    border-radius: 1vmin;
-    transform-origin: top left;
-    transform: rotate(90deg);
+    .dim(90%; 2%);
+    .absolute(@top: 25%; @left: 30%);
+    .radius(1vmin);
+    .rotate(90deg);
     transition: background-color linear 0.3s;
   }
   
   .leg {
-    position: absolute;
-    width: 70%;
-    height: 2%;
-    background-color: #444;
-    border-radius: 1vmin;
-    transform-origin: top left;
-    transform: rotate(65deg);
-    top: 57%;
-    left: 30%;
-    transition: 0.5s transform linear 0.5s, background-color linear 0.3s;
+    .dim(70%; 2%);
+    .absolute(@top: 57%; @left: 30%);
+    .radius(1vmin);
+    .rotate(65deg);
+  }
+  
+  .arm, .leg, .body {
+    .bg-444;
+    transform-origin: top left;    
+  }
+  
+  .arm, .leg {
+    transition: 0.5s transform linear 0.5s, 
+                background-color linear 0.3s;
   }
   
   .leg.right {
-    transform: rotate(110deg);
+    .rotate(110deg);
   }
 }

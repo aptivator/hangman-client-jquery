@@ -1,4 +1,3 @@
-import containerLess from './container.less';
 import $_            from 'jquery';
 import {appSelector} from '../../lib/vars';
 import containerTpl  from './container.tpl';

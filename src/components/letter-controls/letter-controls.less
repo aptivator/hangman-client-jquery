@@ -1,50 +1,44 @@
 .controls {
+  .table-cell;
+  .radius(1vmin);
   padding: 1vmin;
   margin-top: 2vmin;
   border: 1px solid #ddd;
-  border-radius: 1vmin;
-  display: table-cell;
 }
 
 .letters-container {
-  width: 20vmin;
+  .dim(20vmin);
 }
 
 .letters.screen::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0);
+  .content;
+  .absolute(0; 0; 0; 0; 1);
+  .bg-transparent;
 }
 
 .letters {
-  position: relative;
-  display: inline-block;
+  .relative;
+  .inline-block;
   
-  > .letter-control {
+  .letter-control {
+    .dim(5vmin; 6vmin);
+    .align-center;
+    .uppercase;
+    .pointer;
     float: left;
-    width: 5vmin;
-    height: 6vmin;
     line-height: 6vmin;
-    text-align: center;
     font-size: 3vmin;
-    text-transform: uppercase;
     color: #444;
-    cursor: pointer;
     transition: color linear 0.3s;
     
     &:hover {
-      border-radius: 1vmin;
+      .radius(1vmin);
       background-color: #ddd;
     }
     
     &.picked {
       color: #aaa;
-      pointer-events:none;
+      pointer-events: none;
     }
     
     &:nth-of-type(4n + 1) {
@@ -54,24 +48,23 @@
 }
 
 .label {
-  text-align: center;
+  .align-center;
   font-size: 1.8vmin;
   color: #777;
   margin-bottom: 0.5vmin;
 }
 
 button {
-  display: block;
+  .dim(100%);
+  .pointer;
+  .radius(0.5vmin);
+  .uppercase;
   outline: 0;
-  width: 100%;
   padding: 1.5vmin;
   font: bold 2vmin/1 'Open Sans', sans-serif;
   letter-spacing: 0.1vmin;
   border: 1px solid #ccc;
-  border-radius: 0.5vmin;
-  text-transform: uppercase;
   background-color: #eee;
-  cursor: pointer;
   color: #333;
   margin-top: 2vmin;
   

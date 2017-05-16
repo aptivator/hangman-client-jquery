@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon');
+@import './helpers/helpers';
+
+.hide {
+  display: none !important;
+}
+
+.dissolve {
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+
+*, ::before, ::after {
+  .reset;
+}
+
+body {
+  .bg-white;
+}
+
+.container {
+  font-family: cursive;
+  .no-select;
+  .center-xy;
+  .fixed(@top: 45%; @left: 50%);
+  
+  &.screen::before {
+    .content;
+    .bg-transparent;
+    .absolute(0; 0; 0; 0; 100);    
+  }
+  
+  h1 {
+    .capitalize;
+    .small-caps;
+    .align-center;
+    font: bold 8vmin/2 cursive;
+    letter-spacing: 0.5vmin;
+    color: #444;
+  }
+  
+  @keyframes fade-in-out {
+    0%   {opacity: 0.4;}
+    50%  {opacity: 1;}
+    100% {opacity: 0.4;}
+  }
+  
+  .loading {
+    margin: 1.5vmin 0;
+    padding: 2.2vmin 0;
+    overflow: hidden; 
+    transition: padding linear 0.3s;
+    
+    .relative;
+    
+    &.loading-hidden {
+      .block;
+      padding: 0;
+    }
+  
+    .loading-message {
+      font-size: 3vmin;
+      color: #777;
+      animation: fade-in-out linear 2s infinite;
+      .center-xy(@x: 0);
+      .absolute(@top: 50%; @left: 0; @right: 0);
+      .align-center();
+    }
+  }
+
+  .play-area {
+    .table;
+    .center-xm;
+    .dim(80vmin);
+    
+    .spacer {
+      .table-cell;
+      .dim(2vmin);
+    }
+  }
+  
+  footer {
+    .relative(@bottom: -5vmin);
+    .align-center;
+    color: #777;
+    font-size: 1.5vmin;
+    
+    .copy {
+      font: 1.2em 'Coming Soon';
+    }  
+  }
+}
+
+@import '../components/hanger/hanger';
+@import '../components/letter-controls/letter-controls';
+@import '../components/word/word';

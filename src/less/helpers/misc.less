@@ -1,0 +1,28 @@
+.no-select() {
+  user-select: none;
+}
+
+.dim(@width: auto; @height: auto) {
+  width: @width;
+  height: @height;
+}
+
+.content(@content: "") {
+  content: @content;
+}
+
+.radius(@radius) {
+  border-radius: @radius;
+}
+
+.round() {
+  .radius(100%);
+}
+
+.pointer() {
+  cursor: pointer;
+}
+
+.in-line() {
+  white-space: nowrap;
+}

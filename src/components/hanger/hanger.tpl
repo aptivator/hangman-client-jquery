@@ -1,8 +1,8 @@
 <div>
   <div class = "hanger">
-    <div class = "lower-beam"></div>
-    <div class = "vertical-beam"></div>
-    <div class = "upper-beam"></div>
+    <div class = "beam beam-lower"></div>
+    <div class = "beam beam-vertical"></div>
+    <div class = "beam beam-upper"></div>
     <div class = "rope"></div>
   </div>
   <div class = "person">

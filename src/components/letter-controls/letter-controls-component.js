@@ -1,4 +1,3 @@
-import letterControlsLess       from './letter-controls.less';
 import $_                       from 'jquery';
 import _                        from 'lodash';
 import {letterControlsSelector} from '../../lib/vars';

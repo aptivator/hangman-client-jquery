@@ -1,0 +1,20 @@
+.position(@type: absolute; @top: auto; @right: auto; @bottom: auto; @left: auto; @z-index: auto) {
+  position: @type;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+  left: @left;
+  z-index: @z-index;
+}
+
+.absolute(@top: auto; @right: auto; @bottom: auto; @left: auto; @z-index: auto) {
+  .position(@top: @top; @right: @right; @bottom: @bottom; @left: @left; @z-index: @z-index);
+}
+
+.fixed(@top: auto; @right: auto; @bottom: auto; @left: auto; @z-index: auto) {
+  .position(@type: fixed; @top: @top; @right: @right; @bottom: @bottom; @left: @left; @z-index: @z-index);
+}
+
+.relative(@top: auto; @right: auto; @bottom: auto; @left: auto; @z-index: auto) {
+  .position(@type: relative; @top: @top; @right: @right; @bottom: @bottom; @left: @left; @z-index: @z-index);
+}

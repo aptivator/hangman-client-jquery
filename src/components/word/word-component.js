@@ -1,4 +1,3 @@
-import wordLess        from './word.less';
 import $_              from 'jquery';
 import _               from 'lodash';
 import {wordSelector}  from '../../lib/vars';

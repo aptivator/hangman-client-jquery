@@ -1,4 +1,3 @@
-import hangerLess       from './hanger.less';
 import $_               from 'jquery';
 import _                from 'lodash';
 import {hangerSelector} from '../../lib/vars';
