@@ -3,7 +3,7 @@
   .table-cell;
   .relative;
   .dim(55vmin);
-  border: 1px solid #ccc;
+  .border(#ccc);
 }
 
 @keyframes hang-em-up {
@@ -16,7 +16,7 @@
   animation: hang-em-up linear 1s;
   
   .rope {
-    opacity: 1;
+    .opaque;
   }
 }
 
@@ -25,7 +25,7 @@
 }
 
 .beam {
-  border: 0.6vmin solid #333;
+  .border(#333; 0.6vmin);
 }
 
 .beam-lower {
@@ -106,7 +106,7 @@
     .absolute;
     .dim(100%; 100%);
     .radius(100%);
-    border: 0.7vmin solid #444;
+    .border(#444, 0.7vmin);
     
     &.frown {
       .frown {

@@ -20,6 +20,7 @@
   .inline-block;
   
   .letter-control {
+    .444;
     .dim(5vmin; 6vmin);
     .align-center;
     .uppercase;
@@ -27,7 +28,6 @@
     float: left;
     line-height: 6vmin;
     font-size: 3vmin;
-    color: #444;
     transition: color linear 0.3s;
     
     &:hover {
@@ -36,7 +36,7 @@
     }
     
     &.picked {
-      color: #aaa;
+      .aaa;
       pointer-events: none;
     }
     
@@ -47,33 +47,33 @@
 }
 
 .label {
+  .777;
   .align-center;
   font-size: 1.8vmin;
-  color: #777;
   margin-bottom: 0.5vmin;
 }
 
 button {
+  .333;
   .dim(100%);
   .pointer;
   .radius(0.5vmin);
   .uppercase;
   .bg-eee;
-  .box(2vmin auto auto, 1.5vmin);
-  .border-1(#ccc);
+  .box(2vmin auto auto; 1.5vmin);
+  .border(#ccc);
   outline: 0;
   font: bold 2vmin/1 'Open Sans', sans-serif;
   letter-spacing: 0.1vmin;
-  color: #333;
   
   &:hover {
+    .111;
     .bg-ccc;
     border-color: #aaa;
-    color: #111;
   }
   
   &:active {
+    .black;
     .bg-aaa;
-    color: #000;
   }
 }

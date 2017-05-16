@@ -20,10 +20,10 @@ body {
 }
 
 .container {
-  font-family: cursive;
   .no-select;
   .center-xy;
   .fixed(@top: 45%; @left: 50%);
+  font-family: cursive;
   
   &.screen::before {
     .content;
@@ -32,12 +32,12 @@ body {
   }
   
   h1 {
+    .444;
     .capitalize;
     .small-caps;
     .align-center;
     font: bold 8vmin/2 cursive;
     letter-spacing: 0.5vmin;
-    color: #444;
   }
   
   @keyframes fade-in-out {
@@ -47,11 +47,10 @@ body {
   }
   
   .loading {
-    .box(1.5vmin 0; 2.2vmin 0);
-    overflow: hidden; 
-    transition: padding linear 0.3s;
-    
     .relative;
+    .box(1.5vmin 0; 2.2vmin 0);
+    .no-spill;
+    transition: padding linear 0.3s;
     
     &.loading-hidden {
       .block;
@@ -59,12 +58,12 @@ body {
     }
   
     .loading-message {
-      font-size: 3vmin;
-      color: #777;
-      animation: fade-in-out linear 2s infinite;
+      .777;
       .center-xy(@x: 0);
       .absolute(@top: 50%; @left: 0; @right: 0);
       .align-center();
+      font-size: 3vmin;
+      animation: fade-in-out linear 2s infinite;
     }
   }
 
@@ -80,9 +79,9 @@ body {
   }
   
   footer {
+    .777;
     .relative(@bottom: -5vmin);
     .align-center;
-    color: #777;
     font-size: 1.5vmin;
     
     .copy {

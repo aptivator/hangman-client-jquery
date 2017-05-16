@@ -2,8 +2,8 @@
   .relative;
   .table;
   .center-xm;
-  height: 11vmin;
-  overflow: hidden;
+  .dim(auto; 11vmin);
+  .no-spill;
 }
 
 .word {
@@ -11,7 +11,7 @@
   .relative(-12vmin);
   .radius(1vmin);
   .in-line;
-  border: 1px solid #ccc;
+  .border(#ccc);
   padding: 3vmin 3vmin 2vmin;
   transition: top linear 0.35s;
   
@@ -26,12 +26,12 @@
     perspective: 20vmin;
     
     .letter, .cover {
+      .666;
       .dim(100%; 100%);
       .absolute(-0.5vmin; @left: 0);
       .uppercase;
       .align-center;
       font: normal 7.5vmin/1 'Coming Soon', sans-serif;
-      color: #666;
       transform-style: preserve-3d;
       transform-origin: center center;
       backface-visibility: hidden;
@@ -47,7 +47,7 @@
       .dim(100%);
       .absolute(@bottom: -1vmin; @left: 0);
       .bg-ccc;
-      .border-1(#999);
+      .border(#999);
     }
     
     &.show {
