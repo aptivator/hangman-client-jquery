@@ -20,7 +20,7 @@ export default ($ = $_) => {
       methods.splice(index, 1);  
       $('#app').removeAttr('style');
       $overlay.one('transitionend', () => {
-        $overlay.addClass('hide');
+        $overlay.addClass('hidden');
       });
       $overlay.addClass('dissolve');
     }, 2000);

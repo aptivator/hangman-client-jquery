@@ -1,0 +1,77 @@
+.word-container {
+  .relative;
+  .table;
+  .center-xm;
+  .dim(auto; 11vmin);
+  .no-overflow;
+
+  .word {
+    .table;
+    .relative(-12vmin);
+    .radius(1vmin);
+    .in-line;
+    .border(#ccc);
+    padding: 3vmin 3vmin 2vmin;
+    transition: top linear 0.35s;
+    
+    &.active {
+      top: 0vmin;
+    }
+    
+    .letter-wrapper {
+      .inline-block;
+      .dim(6vmin; 5vmin);
+      .relative;
+      perspective: 20vmin;
+      
+      .letter, .cover {
+        .666;
+        .dim(100%; 100%);
+        .absolute(-0.5vmin; @left: 0);
+        .uppercase;
+        .align-center;
+        font: normal 7.5vmin/1 'Coming Soon', sans-serif;
+        transform-style: preserve-3d;
+        transform-origin: center center;
+        backface-visibility: hidden;
+        transition: transform 0.4s linear;
+      }
+      
+      .letter {
+        .rotate-y(-180deg);
+      }
+      
+      .cover::before {
+        .content;
+        .dim(100%);
+        .absolute(@bottom: -1vmin; @left: 0);
+        .bg-ccc;
+        .border(#999);
+      }
+      
+      &.show {
+        .letter {
+          .rotate-y(0deg);
+        }
+        
+        .cover {
+          .rotate-y(180deg);
+        }
+      }
+      
+      &.show.complete {
+        .letter {
+          .rotate-y(180deg);
+        }
+        
+        .cover {
+          .rotate-y(360deg);
+        }      
+      }
+      
+      & + .letter-wrapper {
+        margin-left: 3vmin;
+      }
+    }
+  }
+}

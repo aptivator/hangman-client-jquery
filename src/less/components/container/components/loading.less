@@ -1,0 +1,26 @@
+@keyframes fade-in-out {
+  0%   {opacity: 0.4;}
+  50%  {opacity: 1;}
+  100% {opacity: 0.4;}
+}
+
+.loading {
+  .relative;
+  .box(1.5vmin 0; 2.2vmin 0);
+  .no-overflow;
+  transition: padding linear 0.3s;
+  
+  &.loading-hidden {
+    .block;
+    padding: 0;
+  }
+
+  .loading-message {
+    .777;
+    .center-xy(@x: 0);
+    .absolute(@top: 50%; @left: 0; @right: 0);
+    .align-center();
+    font-size: 3vmin;
+    animation: fade-in-out linear 2s infinite;
+  }
+}
