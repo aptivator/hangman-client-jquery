@@ -17,7 +17,7 @@ export default class {
       return wordInitializer(this, word);
     }
     
-    $el.find('.letter-wrapper').each((idx, el) => {
+    $el.find('.letter-container').each((idx, el) => {
       let $letterWrapper = $(el);
       let $letter = $letterWrapper.find('.letter');
       let letter = word[idx];
