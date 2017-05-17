@@ -9,7 +9,7 @@ export default ($ = $_) => {
   
   let dataHandler = (data, loadingTimeout) => {
     clearTimeout(loadingTimeout);
-    $loading.addClass('hidden');
+    $loading.addClass('loading-hidden');
     $container.removeClass('screen');     
     dataLinker(data);    
   };
@@ -34,13 +34,13 @@ export default ($ = $_) => {
     let method = new_ ? 'new' : 'play';
     let data = new_ ? {} : {letter: $el.text()};
     let loadingTimeout = setTimeout(() => {
-      $loading.removeClass('hidden');
-    }, 1000);
+      $loading.removeClass('loading-hidden');
+    }, 500);
     
     $container.addClass('screen');
     
     api[method](data).then(data => {
-      methods.forEach(method => method(data, loadingTimeout));         
+      methods.forEach(method => method(data, loadingTimeout));
     }, err => console.log(err));
   });
   

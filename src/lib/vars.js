@@ -1,5 +1,5 @@
 const appSelector = '#app';
-const hangerSelector = '.hanger-area';
+const hangerSelector = '.hanger-container';
 const letterControlsSelector = '.letters';
 const wordSelector = '.word';
 

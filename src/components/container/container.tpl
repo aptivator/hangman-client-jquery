@@ -6,8 +6,8 @@
   <div class = "loading loading-hidden">
     <span class = "loading-message">Loading...</span>
   </div>
-  <div class = "play-area">
-    <div class = "hanger-area"></div>
+  <div class = "playground">
+    <div class = "hanger-container"></div>
     <div class = "spacer"></div>
     <div class = "controls">
       <label>Pick a letter</label>
