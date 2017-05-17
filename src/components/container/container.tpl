@@ -10,9 +10,9 @@
     <div class = "hanger-area"></div>
     <div class = "spacer"></div>
     <div class = "controls">
-      <p class = "label">Pick a letter</p>
-      <div class = "letters-container"></div>
-      <p class = "label">or</p>
+      <label>Pick a letter</label>
+      <div class = "letters"></div>
+      <label>or</label>
       <button class = "new-game">New Game</button>
     </div>
   </div>

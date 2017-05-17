@@ -1,0 +1,15 @@
+.word {
+  .table;
+  .relative(-12vmin);
+  .radius(1vmin);
+  .in-line;
+  .border(#ccc);
+  padding: 3vmin 3vmin 2vmin;
+  transition: top linear 0.35s;
+  
+  &.active {
+    top: 0vmin;
+  }
+  
+  @import './letter-wrapper';
+}

@@ -1,0 +1,48 @@
+@keyframes hang-em-up {
+  0%   {top: 10%}
+  50%  {top: 30%}
+  100% {top: 10%}
+}
+
+.hanger {
+  .absolute(10%; 0; 0; 0);
+  
+  &.hung {
+    animation: hang-em-up linear 1s;
+    
+    .rope {
+      .opaque;
+    }
+  }
+  
+  .beam {
+    .border(#333; 0.6vmin);
+  }
+  
+  .beam-lower {
+    .radius(25%);
+    .dim(90%);
+    .absolute(auto; 0; 1.3vmin; 0);
+    .center-xm;
+  }
+  
+  .beam-upper {
+    .absolute(0; auto; 1.3vmin; 10vmin);
+    border-width: 0.5vmin;
+  }
+  
+  .beam-vertical {
+    .dim(35vmin);
+    .absolute(@top: 0; @left: 5vmin);
+    .radius(25% 35%);
+    border-width: 0.4vmin;
+  }
+  
+  .rope {
+    .dim(0.5vmin; 10vmin);
+    .absolute(@top: 0; @left: 51.8%);
+    .bg-brown;
+    .transparent;
+    transition: 0.5s opacity linear 0s;
+  }  
+}

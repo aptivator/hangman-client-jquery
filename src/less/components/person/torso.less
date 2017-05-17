@@ -1,0 +1,44 @@
+.arm.missed, .body.missed, .leg.missed {
+  .bg-aaa;
+}
+
+.arm {
+  .dim(60%; 2%);
+  .absolute(@top: 25%; @left: 30%);
+  .radius(1vmin);
+  .rotate(55deg);
+  .no-backface;
+}
+
+.arm.right {
+  .rotate(125deg);
+}
+
+.body {
+  .dim(90%; 2%);
+  .absolute(@top: 25%; @left: 30%);
+  .radius(1vmin);
+  .rotate(90deg);
+  transition: background-color linear 0.3s;
+}
+
+.leg {
+  .dim(70%; 2%);
+  .absolute(@top: 57%; @left: 30%);
+  .radius(1vmin);
+  .rotate(65deg);
+}
+
+.arm, .leg, .body {
+  .bg-444;
+  transform-origin: top left;    
+}
+
+.arm, .leg {
+  transition: 0.5s transform linear 0.5s, 
+              background-color linear 0.3s;
+}
+
+.leg.right {
+  .rotate(110deg);
+}

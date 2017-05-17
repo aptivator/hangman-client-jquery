@@ -1,6 +1,6 @@
 const appSelector = '#app';
 const hangerSelector = '.hanger-area';
-const letterControlsSelector = '.letters-container';
+const letterControlsSelector = '.letters';
 const wordSelector = '.word';
 
 export {

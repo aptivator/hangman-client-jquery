@@ -1,0 +1,123 @@
+.head {
+  .absolute;
+  .dim(100%; 100%);
+  .radius(100%);
+  .border(#444, 0.7vmin);
+  
+  &::before {
+    .content;
+    .dim(120%; 116%);
+    .absolute(@top: -8%; @left: -10%; @z-index: 10);
+    .bg-white;
+    .transparent;
+    transition: opacity linear 0.3s;        
+  }
+  
+  &.missed::before {
+    opacity: 0.5;
+    z-index: 2;        
+  }
+  
+  &.frown {
+    .frown {
+      .block;
+    }
+    
+    .smile, .neutral {
+      .hidden;
+    }
+  }
+  
+  &.smile {
+    .smile {
+      .block;
+    }
+    
+    .frown, .neutral {
+      .hidden;
+    }
+  }
+  
+  &.neutral {
+    .neutral {
+      .block;
+    }
+    
+    .frown, .smile {
+      .hidden;
+    }
+  }
+  
+  .eye {
+    .dim(12%; 16%);
+    .absolute(@top: 27%; @left: 25%; @z-index: 1);
+    .round;
+  }
+  
+  .eye:first-of-type {
+    left: auto;
+    right: 25%;
+  }
+  
+  .neutral {
+    .dim(35%; 8.5%);
+    .center-x;
+    .absolute(@top: 72%; @left: 50%);
+    
+    &::before, &::after {
+      .content;
+      .dim(20%; 100%);
+      .round;
+      .absolute(@left: -11.43%);
+      .bg-parent;
+    }
+    
+    &::after {
+      left: auto;
+      right: -11.43%;
+    }
+  }
+  
+  .frown, .smile {
+    .dim(45%; 30%);
+    .center-x;
+    .absolute(@top: 66%; @left: 50%);
+    .round;
+    
+    &::after, &::before {
+      .bg-white;
+    }
+    
+    &:after {
+      .content;
+      .dim(100%; 60%);
+      .absolute(@top: 50%; @left: 0);
+      .radius(0 0 100% 100%);
+    }
+    
+    &:before {
+      .content;
+      .dim(70%; 70%);
+      .round;
+      .center-xy;
+      .absolute(@top: 60%; @left: 50%; @z-index: 1);
+    }
+  }
+  
+  .eye, .neutral, .frown, .smile {
+    .bg-444;
+  }
+  
+  .smile {
+    top: 55%;
+    
+    &:after {
+      top: -10%;
+      .radius(100% 100% 0 0);
+    }
+    
+    &:before {
+      top: 40%;
+    }
+  }
+}

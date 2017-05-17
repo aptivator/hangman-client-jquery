@@ -1,0 +1,34 @@
+.letters {
+  .relative;
+  .inline-block;
+  
+  &.screen::before {
+    .cover;
+  }
+  
+  .letter-control {
+    .444;
+    .dim(5vmin; 6vmin);
+    .align-center;
+    .uppercase;
+    .pointer;
+    float: left;
+    line-height: 6vmin;
+    font-size: 3vmin;
+    transition: color linear 0.3s;
+    
+    &:hover {
+      .radius(1vmin);
+      .bg-ddd;
+    }
+    
+    &.picked {
+      .aaa;
+      pointer-events: none;
+    }
+    
+    &:nth-of-type(4n + 1) {
+      clear: left;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.letter-wrapper {
+  .inline-block;
+  .dim(6vmin; 5vmin);
+  .relative;
+  perspective: 20vmin;
+  
+  .letter, .cover {
+    .666;
+    .dim(100%; 100%);
+    .absolute(-0.5vmin; @left: 0);
+    .uppercase;
+    .align-center;
+    .no-backface;
+    font: 7.5vmin/1 'Coming Soon', sans-serif;
+    transform-origin: center center;
+    transition: transform 0.4s linear;
+  }
+  
+  .letter {
+    .rotate-y(-180deg);
+  }
+  
+  .cover::before {
+    .content;
+    .dim(100%);
+    .absolute(@bottom: -1vmin; @left: 0);
+    .bg-ccc;
+    .border(#999);
+  }
+  
+  &.show {
+    .letter {
+      .rotate-y(0deg);
+    }
+    
+    .cover {
+      .rotate-y(180deg);
+    }
+  }
+  
+  &.show.complete {
+    .letter {
+      .rotate-y(180deg);
+    }
+    
+    .cover {
+      .rotate-y(360deg);
+    }      
+  }
+  
+  & + .letter-wrapper {
+    margin-left: 3vmin;
+  }
+}
