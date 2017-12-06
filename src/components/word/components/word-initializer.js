@@ -10,12 +10,12 @@ export default (instance, word) => {
   async_.series([
     done => {
       if($el) {
-        let $letterWrappers = $el.find('.letter-wrapper');
-        let $letters = $letterWrappers.find('.letter:not(:empty)');
+        let $letterContainers = $el.find('.letter-container');
+        let $letters = $letterContainers.find('.letter:not(:empty)');
         if($letters.length) {
           let duration = duration_($letters.eq(0)) + 200;
           setTimeout(() => done(), duration);
-          return $letterWrappers.addClass('complete');
+          return $letterContainers.addClass('complete');
         }
       }
       
